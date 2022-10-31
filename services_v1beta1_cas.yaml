@@ -3,7 +3,7 @@ kind: CAS
 metadata:
   name: cas-sample
 spec:
-  image: registry.scontain.com:5050/sconecuratedimages/experimental:cas.preprovisioned-edge
+  image: registry.scontain.com/scone.cloud/cas
   imagePullSecrets:
     - name: sconeapps
   service:
