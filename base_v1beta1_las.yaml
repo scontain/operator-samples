@@ -1,0 +1,12 @@
+apiVersion: base.scone.cloud/v1beta1
+kind: LAS
+metadata:
+  name: las-sample
+spec:
+  image: "registry.scontain.com:5050/sconecuratedimages/kubernetes:las-scone5.7.0"
+  #image: "registry.scontain.com:5050/clenimar/test/las:scone5.7.0"
+  #imagePullSecrets:
+  # - sconeapps
+  #imagePullPolicy: Always
+  #autoUpdate: true
+  #hostPort: 18766

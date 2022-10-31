@@ -1,0 +1,7 @@
+apiVersion: base.scone.cloud/v1beta1
+kind: SGXPlugin
+metadata:
+  name: sgxplugin-sample
+spec:
+  # TODO(user): Add fields here
+  autoUpdate: true

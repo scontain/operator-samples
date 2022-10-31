@@ -1,0 +1,13 @@
+apiVersion: services.scone.cloud/v1beta1
+kind: CAS
+metadata:
+  name: cas-sample
+spec:
+  image: registry.scontain.com:5050/sconecuratedimages/experimental:cas.preprovisioned-edge
+  imagePullSecrets:
+    - name: sconeapps
+  service:
+    type: NodePort
+  imagePullPolicy: Always
+  persistence:
+    enabled: false
