@@ -1,7 +1,7 @@
 apiVersion: services.scone.cloud/v1beta1
 kind: CAS
 metadata:
-  name: cas-sample
+  name: mycas
 spec:
   image: registry.scontain.com/scone.cloud/cas
   imagePullSecrets:
@@ -10,4 +10,7 @@ spec:
     type: NodePort
   imagePullPolicy: Always
   persistence:
-    enabled: false
+    enabled: true
+  backup-controller:
+    enabled: true
+    session: mycas-backup-controller/register
