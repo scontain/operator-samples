@@ -11,6 +11,3 @@ spec:
   imagePullPolicy: Always
   persistence:
     enabled: true
-  backup-controller:
-    enabled: true
-    session: mycas-backup-controller/register
