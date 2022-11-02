@@ -1,11 +1,11 @@
 apiVersion: base.scone.cloud/v1beta1
 kind: LAS
 metadata:
-  name: las-sample
+  name: las
 spec:
   image: "registry.scontain.com/scone.cloud/las"
   imagePullSecrets:
-   - sconeapps
+   - name: sconeapps
   #imagePullPolicy: Always
   #autoUpdate: true
   #hostPort: 18766
