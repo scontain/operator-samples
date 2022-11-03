@@ -5,7 +5,8 @@ metadata:
 spec:
   # TODO(user): Add fields here
   autoUpdate: true
-
+  podAnnotations:
+    scone-operator/inject-pull-secret: "true"
 ---
 
 apiVersion: base.scone.cloud/v1beta1
@@ -16,6 +17,8 @@ spec:
   image: "registry.scontain.com/scone.cloud/las"
   imagePullSecrets:
    - name: sconeapps
+  podAnnotations:
+    scone-operator/inject-pull-secret: "true"
 
 ---
 
@@ -32,3 +35,5 @@ spec:
   imagePullPolicy: Always
   persistence:
     enabled: true
+  podAnnotations:
+    scone-operator/inject-pull-secret: "true"

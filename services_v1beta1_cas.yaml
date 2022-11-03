@@ -11,3 +11,5 @@ spec:
   imagePullPolicy: Always
   persistence:
     enabled: true
+  podAnnotations:
+    scone-operator/inject-pull-secret:  "true"
