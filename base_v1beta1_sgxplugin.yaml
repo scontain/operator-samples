@@ -4,3 +4,6 @@ metadata:
   name: sgxplugin-sample
 spec:
   autoUpdate: true
+imagePullSecrets:
+  - name: sconeapps
+
