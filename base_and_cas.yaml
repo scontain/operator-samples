@@ -13,7 +13,7 @@ kind: LAS
 metadata:
   name: las
 spec:
-  image: "registry.scontain.com/scone.cloud/las:las:no-epid-production"
+  image: "registry.scontain.com/scone.cloud/las:no-epid-production"
   imagePullSecrets:
    - name: sconeapps
 
