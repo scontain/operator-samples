@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: scone-system
+  labels:
+    name: scone-system
+  annotations:
+    scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
+
+---
+
 apiVersion: base.scone.cloud/v1beta1
 kind: SGXPlugin
 metadata:
@@ -6,6 +18,7 @@ spec:
   autoUpdate: true
   imagePullSecrets:
    - name: scone-operator-pull
+
 ---
 
 apiVersion: base.scone.cloud/v1beta1

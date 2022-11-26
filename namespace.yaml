@@ -6,4 +6,3 @@ metadata:
     name: scone-system
   annotations:
     scone-operator/inject-pull-secret:  "true"
-
