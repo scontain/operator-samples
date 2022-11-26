@@ -6,3 +6,16 @@ metadata:
     name: scone-system
   annotations:
     scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: default
+  labels:
+    name: scone-system
+  annotations:
+    scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
