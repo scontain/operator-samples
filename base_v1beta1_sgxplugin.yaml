@@ -1,9 +1,8 @@
 apiVersion: base.scone.cloud/v1beta1
 kind: SGXPlugin
 metadata:
-  name: sgxplugin-sample
+  name: sgxplugin
 spec:
   autoUpdate: true
 imagePullSecrets:
-  - name: sconeapps
-
+  - name: scone-operator-pull
