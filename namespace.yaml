@@ -19,3 +19,16 @@ metadata:
   annotations:
     scone-operator/inject-pull-secret:  "true"
     sconeapps/inject-pull-secret:  "true"
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: teemon
+  labels:
+    name: teemon
+  annotations:
+    scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
+
