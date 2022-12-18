@@ -35,7 +35,7 @@ spec:
 apiVersion: services.scone.cloud/v1beta1
 kind: CAS
 metadata:
-  name: cas-no-backup
+  name: cas
 spec:
   image: registry.scontain.com/scone.cloud/cas
   imagePullSecrets:
@@ -45,5 +45,10 @@ spec:
   imagePullPolicy: Always
   persistence:
     enabled: true
-  podAnnotations:
-    scone-operator/inject-pull-secret: "true"
+  backup-controller:
+    enabled: true
+    session: "cas-backup-controller-policy-name/register"
+  databaseSnapshots:
+    enabled: true
+    persistence:
+      enabled: true
