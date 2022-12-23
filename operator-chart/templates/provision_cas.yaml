@@ -1,0 +1,27 @@
+#
+# NAME - name of CAS custom resource
+# NAMESPACE - namespace in which the CAS CR will be created
+# POLICY_NAME - policy name used by the backup controller
+# VERSION - release version
+#
+apiVersion: services.scone.cloud/v1beta1
+kind: CAS
+metadata:
+  name: "{{ .Values.cas.name }}"
+  namespace: "{{ .Values.cas.namespace }}"
+spec:
+  image: "{{ .Values.registry }}/scone.cloud/cas:{{ .Values.version }}"
+  imagePullSecrets:
+    - name: sconeapps
+  service:
+    type: NodePort
+  imagePullPolicy: Always
+  persistence:
+    enabled: true
+  databaseSnapshots:
+    enabled: true
+    persistence:
+      enabled: true
+  podAnnotations:
+    scone-operator/inject-pull-secret:  "true"
+

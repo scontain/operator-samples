@@ -1,0 +1,21 @@
+#
+# VERSION - release version
+# NAME - name of CAS custom resource
+# NAMESPACE - namespace in which the CAS CR will be created
+# POLICY_NAME - policy name used by the backup controller
+# VERSION - release version
+#
+apiVersion: base.scone.cloud/v1beta1
+kind: LAS
+metadata:
+  name: "{{ .Values.las.name }}"
+spec:
+  autoUpdate: true
+  image: "{{ .Values.registry }}/scone.cloud/las:{{ .Values.version }}"
+  imagePullSecrets:
+   - name: scone-operator-pull
+  imagePullPolicy: Always
+  namespace: "{{ .Values.las.namespace }}"
+  podAnnotations:
+    scone-operator/inject-pull-secret:  "true"
+

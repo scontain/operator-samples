@@ -1,0 +1,32 @@
+#
+# NAME - name of CAS custom resource
+# NAMESPACE - namespace in which the CAS CR will be created
+# POLICY_NAME - policy name used by the backup controller
+# SCONE_CLI_MRENCLAVE - 
+# 
+name: {{ .Values.cas.policy_name }}
+version: "0.3"
+
+security:
+  attestation:
+    tolerate: [outdated-tcb]
+
+services:
+  - name: register
+    image_name: cli
+    attestation:
+      - mrenclave: [{{ .Values.cas.mrenclave }}]
+    command: "scone cas register-backup @@3"
+    environment:
+      SCONE_MODE: hw
+      SCONE_LOG: error
+      SCONE_CLI_CONFIG: /etc/owner-identity.json
+      \@\@SCONE_LAS_ADDR: ""
+    pwd: /
+
+images:
+  - name: cli
+    injection_files:
+      - path: /etc/owner-identity.json
+        content: |
+          {{ .Values.cas.owner_identity | indent 4 }}

@@ -1,0 +1,21 @@
+## CAS Owner Config 
+##
+## NOTE: We need to prefix each line with a '# ' (to generate a valid yaml file)
+##
+## SVCNAME        - CAS service name
+## NAMESPACE      - namespace
+## POD            - name of CAS pod
+## SCONE_CAS_ADDR - IP address of this CAS instance
+## VERSION        - version of CAS
+## 
+# 
+# [api_identity]
+# common_name = "{{ .Values.owner_config.svcname }}"
+# alt_names = ["{{ .Values.owner_config.pod }}",  "{{ .Values.owner_config.pod }}.{{ .Values.owner_config.namespace }}.svc.cluster.local", "{{ .Values.owner_config.pod }}.default",  "{{ .Values.owner_config.svcname }}.{{ .Values.owner_config.namespace }}.svc.cluster.local", "{{ .Values.owner_config.svcname }}.default", "localhost", "{{ .Values.owner_config.scone_cas_addr }}"]
+# 
+# [dcap]
+# subscription_key = "{{ .Values.owner_config.subscription_key }}"
+# 
+# [audit_log]
+# mode = "{{ .Values.owner_config.signed }}"
+# sink = "file"

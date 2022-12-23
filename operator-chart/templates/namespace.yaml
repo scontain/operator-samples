@@ -1,0 +1,13 @@
+#
+# $NAMESPACE is provided by command line
+#
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace.name }}
+  labels:
+    name: {{ .Values.namespace.label }}
+  annotations:
+    scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
+
