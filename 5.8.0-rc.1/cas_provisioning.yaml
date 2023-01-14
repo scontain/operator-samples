@@ -17,6 +17,6 @@ spec:
     persistence:
       enabled: true
   podAnnotations:
-    scone-operator/inject-pull-secret:  "true"
+    sconeapps/inject-pull-secret:  "true"
   backup-controller:
     enabled: false
